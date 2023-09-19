@@ -1,0 +1,57 @@
+{
+    "_metadata": {
+      "major_version": 1,
+      "minor_version": 1
+    },
+    "display_information": {
+      "name": "MASA Slack Bot",
+      "long_description": "",
+      "description": "",
+      "background_color": "#0000AA"
+    },
+    "settings": {
+      "socket_mode_enabled": true,
+      "interactivity": {
+        "is_enabled": true,
+        "request_url": ""
+      },
+      "event_subscriptions": {
+        "bot_events": [
+          "app_home_opened"
+        ]
+      }
+    },
+    "features": {
+      "app_home": {
+        "home_tab_enabled": true,
+        "messages_tab_enabled": true,
+        "messages_tab_read_only_enabled": false
+      },
+      "bot_user": {
+        "display_name": "MASA Slack Bot"
+      },
+      "slash_commands": [
+        {
+          "command": "",
+          "description": "",
+          "usage_hint": "",
+          "url": ""
+        }
+      ]
+    },
+    "oauth_config": {
+      "scopes": {
+        "bot": [
+          "commands",
+          "chat:write",
+          "chat:write.public",
+          "incoming-webhook",
+          "links:write"
+        ]
+      },
+      "redirect_urls": [
+        "https://example.com/slack/auth"
+      ]
+    }
+  }
+  
