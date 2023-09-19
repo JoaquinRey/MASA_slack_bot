@@ -7,12 +7,12 @@
       "name": "MASA Slack Bot",
       "long_description": "",
       "description": "",
-      "background_color": "#0000AA"
+      "background_color": "#20165c"
     },
     "settings": {
       "socket_mode_enabled": true,
       "interactivity": {
-        "is_enabled": true,
+        "is_enabled": false,
         "request_url": ""
       },
       "event_subscriptions": {
@@ -50,7 +50,7 @@
         ]
       },
       "redirect_urls": [
-        "https://example.com/slack/auth"
+        "https://github.com/synnaxlabs/synnax"
       ]
     }
   }
