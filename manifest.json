@@ -46,7 +46,8 @@
           "chat:write",
           "chat:write.public",
           "incoming-webhook",
-          "links:write"
+          "links:write",
+          "connections:write"
         ]
       },
       "redirect_urls": [
