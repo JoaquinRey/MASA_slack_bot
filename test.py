@@ -1,7 +1,9 @@
-import os
-import logging
-from dotenv import load_dotenv
+from flask import Flask
 
-load_dotenv()
+app = Flask(__name__)
 
-logging.warning("Missing environmental variables")
+@app.route("/")
+def is_online():
+    return "<p>Slack bot is online</p>"
+
+app.run(debug=True, port=3000)
