@@ -14,6 +14,7 @@ The MASA Slack Bot is intended to listen to changes in the data and metadata, an
 ## Testing :
 
 ### Macbook
+
 Make sure you are in the Tests directory, and then run `sudo sh {file_name}.sh {loopback address}`
-<br>ex: `sudo sh test_request.sh 127.0.0.1`
+<br>ex: `sudo sh test_request.sh "127.0.0.1"`
 <br>note: You can obtain the loopback address by running `sudo sh get_loopback.sh`
