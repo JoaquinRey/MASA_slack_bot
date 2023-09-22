@@ -1,0 +1,8 @@
+type Range struct {
+    Key uuid.UUID
+    Name string
+    TimeRange struct {
+         Start TimeStamp
+         End TimeStamp
+    }
+ }

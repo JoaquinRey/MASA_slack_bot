@@ -4,7 +4,7 @@ import os
 from slack_sdk import WebClient
 from slack_sdk.errors import SlackApiError
 from slack_sdk.webhook import WebhookClient
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, Response
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -16,7 +16,7 @@ app = Flask(__name__)
 try:
     slack_token = os.environ["SLACK_TOKEN"]
     webhook_url = os.environ["WEBHOOK_URL"]
-    sw_eng_channel = os.environ["SOFTWARE_ENGINEERING_CHANNEL"]
+    sw_eng_channel = os.environ["CHANNEL_ID"]
 except:
     logging.warning("Missing environmental variables")
     print("Missing environmental variables")
@@ -39,29 +39,20 @@ def send_graph(channel: str):
 
 @app.route("/")
 def is_online():
+    send_message(sw_eng_channel, "Request received")
     return "<p>Slack bot is online</p>"
 
-# Unsure abt this part
-# If there is another method to get webhooks, I'll do it
-# Will test once I get webhook url
 @app.route('/incoming-webhook', methods=['POST'])
 def incoming_webhook():
-    data = request.json
-    text = data.get('text', '')
 
     try:
-        response = client.chat_postMessage(
-            # Will either extract channel from webhook, or do some logic
-            channel='',
-            # placehold text for now
-            text=""
-        )
-        print('Message sent:', response)
-        return jsonify({'message': 'Message sent to Slack'}), 200
+        send_message(sw_eng_channel, f"{request.json['Name']} has concluded")
+        return Response(response="OK", status=200, mimetype="application/json")
     except SlackApiError as e:
-        print('Error sending message:', e.response['error'])
-        return jsonify({'error': 'Error sending message to Slack'}), 500
+        #print('Error sending message:', e.response['error'])
+        return Response(response="NOT OK", status=500, mimetype="application/json")
 
+send_message(sw_eng_channel, "4")
 app.run(debug=True, port=3000)
 
 if __name__ == "__main__":
