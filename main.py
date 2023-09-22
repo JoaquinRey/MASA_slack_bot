@@ -19,7 +19,6 @@ try:
     sw_eng_channel = os.environ["CHANNEL_ID"]
 except:
     logging.warning("Missing environmental variables")
-    print("Missing environmental variables")
 
 client = WebClient(token=slack_token)
 webhook = WebhookClient(webhook_url)
@@ -39,7 +38,6 @@ def send_graph(channel: str):
 
 @app.route("/")
 def is_online():
-    send_message(sw_eng_channel, "Request received")
     return "<p>Slack bot is online</p>"
 
 @app.route('/incoming-webhook', methods=['POST'])
@@ -52,8 +50,7 @@ def incoming_webhook():
         #print('Error sending message:', e.response['error'])
         return Response(response="NOT OK", status=500, mimetype="application/json")
 
-send_message(sw_eng_channel, "4")
-app.run(debug=True, port=3000)
 
 if __name__ == "__main__":
-    send_message(sw_eng_channel, "We are gaming")
+    #send_message(sw_eng_channel, "We are gaming")
+    app.run(debug=True, port=3000)

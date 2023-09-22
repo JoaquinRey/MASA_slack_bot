@@ -4,10 +4,9 @@
       "minor_version": 1
     },
     "display_information": {
-      "name": "MASA Slack Bot",
-      "long_description": "",
-      "description": "",
-      "background_color": "#20165c"
+      "name": "Synnax",
+      "description": "The Synnax Slack Bot",
+      "background_color": "#121212"
     },
     "settings": {
       "socket_mode_enabled": true,
