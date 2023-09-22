@@ -14,7 +14,7 @@ logging.basicConfig(level=logging.DEBUG)
 try:
     slack_token = os.environ["SLACK_TOKEN"]
     webhook_url = os.environ["WEBHOOK_URL"]
-    sw_eng_channel = os.environ["SOFTWARE_ENGINEERING_CHANNEL"]
+    sw_eng_channel = os.environ["CHANNEL_ID"]
 except:
     logging.warning("Missing environmental variables")
     print("Missing environmental variables")
