@@ -1,0 +1,1 @@
+curl -X POST http://$1:3000/incoming-webhook -H "Content-Type: application/json" -d '{"Key": 1234, "Name": "test name", "TimeRange": {"Start": 0, "End": 5}}'
