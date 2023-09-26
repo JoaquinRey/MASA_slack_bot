@@ -7,16 +7,15 @@ The Synnax Slack Bot is intended to listen to changes in the data and metadata, 
 - Create command that returns a specified test and respective graph
 - Dockerize the bot
 
-## Instructions:
+## Instructions
 
-### Docker file
+### Docker
 - `docker build -t synnax_bot .`
 - `docker run -p 3000:3000 synnax_bot`
 
-## Testing :
+## Testing
 
 ### Macbook
-
-Make sure you are in the Tests directory, and then run `sudo sh {file_name}.sh {loopback address}`
-<br>ex: `sudo sh test_request.sh "127.0.0.1"`
-<br>note: You can obtain the loopback address by running `sudo sh get_loopback.sh`
+- `sudo sh get_loopback.sh` - Gets the loopback address of the device
+- `sudo sh test_file_send.sh {loopback address} {file path}` - Sends an image to the bot for it to post
+- `sudo sh test_request.sh {loopback address}` - Sends a sample test payload to the bot
