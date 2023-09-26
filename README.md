@@ -1,15 +1,17 @@
-# MASA Slack Bot
+# Synnax Slack Bot
 
-The MASA Slack Bot is intended to listen to changes in the data and metadata, and execute tools such as automated analysis scripts.
+The Synnax Slack Bot is intended to listen to changes in the data and metadata, and execute tools such as automated analysis scripts.
 
 ## TODO:
-- Send message to respective channel to signal test completion once webhook is receieved
-- Send automatically generated graphs after test completition
+- Send file directly from request rather than downloading and then deleting
 - Create command that returns a specified test and respective graph
 - Dockerize the bot
 
 ## Instructions:
 
+### Docker file
+- `docker build -t synnax_bot .`
+- `docker run -p 3000:3000 synnax_bot`
 
 ## Testing :
 
