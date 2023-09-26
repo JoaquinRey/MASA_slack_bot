@@ -33,8 +33,16 @@ def send_message(channel: str, msg: str):
         assert e.response["error"]  
 
 def send_graph(channel: str):
-    pass
+    print("send graph")
+    try:
+        response = client.files_upload(
+            channels=channel,
+            file="./synnax.png",
+            initial_comment="Here's an image:",
+        )
+    except SlackApiError as e:
+        assert e.response["error"]
 
 
 if __name__ == "__main__":
-    send_message(sw_eng_channel, "We are gaming")
+    send_graph(sw_eng_channel)

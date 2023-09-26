@@ -1,0 +1,1 @@
+curl -X POST -F "file=@$1" http://$2:3000/send_file
